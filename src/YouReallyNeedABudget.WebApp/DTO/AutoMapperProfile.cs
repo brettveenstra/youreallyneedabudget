@@ -15,6 +15,7 @@ namespace YouReallyNeedABudget.WebApp
 
             CreateMap<Transaction, DTO.Transaction>();
             CreateMap<DTO.Transaction, Transaction>();
+
         }
     }
 }

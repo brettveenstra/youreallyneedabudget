@@ -8,7 +8,7 @@ using YouReallyNeedABudget.DataAccess;
 namespace YouReallyNeedABudget.DataAccess.Migrations
 {
     [DbContext(typeof(BudgetContext))]
-    [Migration("20160923010809_InitialMigration")]
+    [Migration("20160929022729_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -101,7 +101,7 @@ namespace YouReallyNeedABudget.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("YouReallyNeedABudget.Models.Payee", "Payee")
-                        .WithMany("Transactions")
+                        .WithMany()
                         .HasForeignKey("PayeeId");
                 });
         }

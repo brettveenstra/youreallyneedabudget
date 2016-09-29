@@ -34,14 +34,14 @@ namespace YouReallyNeedABudget.WebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]DTO.Log log)
+        public IActionResult Post([FromBody]DTO.Log logDTO)
         {
-            var newLog = _mapper.Map<Log>(log);
+            var newLog = _mapper.Map<Log>(logDTO);
 
             _dbContext.Logs.Add(newLog);
             _dbContext.SaveChanges();
-
-            return Created(string.Format("/api/logs/{0}", newLog.ID), newLog);
+            
+            return Created(string.Format("/api/logs/{0}", newLog.ID), _mapper.Map<DTO.Log>(newLog));
         }
 
     }

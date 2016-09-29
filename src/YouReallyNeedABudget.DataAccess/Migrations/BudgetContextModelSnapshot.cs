@@ -100,7 +100,7 @@ namespace YouReallyNeedABudget.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("YouReallyNeedABudget.Models.Payee", "Payee")
-                        .WithMany("Transactions")
+                        .WithMany()
                         .HasForeignKey("PayeeId");
                 });
         }

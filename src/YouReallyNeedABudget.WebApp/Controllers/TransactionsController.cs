@@ -20,14 +20,14 @@ namespace YouReallyNeedABudget.WebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]DTO.Transaction transaction)
+        public IActionResult Post([FromBody]DTO.Transaction transactionDTO)
         {
-            var newTransaction = _mapper.Map<Transaction>(transaction);
+            var newTransaction = _mapper.Map<Transaction>(transactionDTO);
 
             _dbContext.Transactions.Add(newTransaction);
             _dbContext.SaveChanges();
 
-            return Created(string.Format("/api/transaction/{0}", newTransaction.ID), newTransaction);
+            return Created(string.Format("/api/transaction/{0}", newTransaction.ID), _mapper.Map<DTO.Transaction>(newTransaction));
         }
 
         [HttpDelete("{id}")]

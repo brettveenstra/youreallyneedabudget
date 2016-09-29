@@ -4,6 +4,7 @@ using YouReallyNeedABudget.DataAccess;
 using AutoMapper.QueryableExtensions;
 using AutoMapper;
 using YouReallyNeedABudget.Models;
+using System.Collections.Generic;
 
 namespace YouReallyNeedABudget.WebApp.Controllers
 {
@@ -20,6 +21,12 @@ namespace YouReallyNeedABudget.WebApp.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet]
+        public IEnumerable<DTO.Account> Get()
+        {
+            return _dbContext.Accounts.ProjectTo<DTO.Account>().ToList();
+        }
+
         [HttpGet("{id}")]
         public DTO.Account Get(int id)
         {
@@ -27,14 +34,14 @@ namespace YouReallyNeedABudget.WebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]DTO.Account account)
+        public IActionResult Post([FromBody]DTO.Account accountDTO)
         {
-            var newAccount = _mapper.Map<Account>(account);
+            var newAccount = _mapper.Map<Account>(accountDTO);
 
             _dbContext.Accounts.Add(newAccount);
             _dbContext.SaveChanges();
 
-            return Created(string.Format("/api/accounts/{0}", newAccount.ID), newAccount);
+            return Created(string.Format("/api/accounts/{0}", newAccount.ID), _mapper.Map<DTO.Account>(newAccount));
         }
 
 
