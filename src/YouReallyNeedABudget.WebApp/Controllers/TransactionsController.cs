@@ -4,7 +4,7 @@ using YouReallyNeedABudget.DataAccess;
 using YouReallyNeedABudget.Models;
 using AutoMapper;
 
-namespace YouReallyNeedABudget.WebApp.Controllers
+namespace YouReallyNeedABudget.WebApi.Controllers
 {
     [Route("api/[controller]")]
     public class TransactionsController : Controller

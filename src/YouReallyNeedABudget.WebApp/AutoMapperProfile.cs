@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using YouReallyNeedABudget.Models;
 
-namespace YouReallyNeedABudget.WebApp
+namespace YouReallyNeedABudget.WebApi
 {
     public class AutoMapperProfile : Profile
     {

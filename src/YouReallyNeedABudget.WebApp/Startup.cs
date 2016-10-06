@@ -7,7 +7,7 @@ using YouReallyNeedABudget.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 
-namespace YouReallyNeedABudget.WebApp
+namespace YouReallyNeedABudget.WebApi
 {
     public class Startup
     {

@@ -6,7 +6,7 @@ using YouReallyNeedABudget.Models;
 using AutoMapper.QueryableExtensions;
 using AutoMapper;
 
-namespace YouReallyNeedABudget.WebApp.Controllers
+namespace YouReallyNeedABudget.WebApi.Controllers
 {
     [Route("api/[controller]")]
     public class LogsController : Controller

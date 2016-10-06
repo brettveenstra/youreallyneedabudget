@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace YouReallyNeedABudget.WebApp.DTO
+namespace YouReallyNeedABudget.WebApi.DTO
 {
     public class Log
     {

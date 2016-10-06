@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:52512/",
+      "applicationUrl": "http://localhost:51093/",
       "sslPort": 0
     }
   },
@@ -11,15 +11,14 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/logs",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "YouReallyNeedABudget.WebApi": {
+    "YouReallyNeedABudget.App": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5000/api/logs",
+      "launchUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
