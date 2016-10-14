@@ -1,35 +1,22 @@
 {
   "name": "youreallyneedabudget",
   "version": "1.0.0",
-  "description": "A simple budgeting/personal finance app built with aspnetcore and reactjs.",
+  "description": "A basic budgeting app built with aspnet core and ReactJS.",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/joepetrakovich/youreallyneedabudget.git"
-  },
-  "keywords": [
-    "aspnetcore",
-    "react"
-  ],
   "author": "Joe Petrakovich",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/joepetrakovich/youreallyneedabudget/issues"
-  },
-  "homepage": "https://github.com/joepetrakovich/youreallyneedabudget#readme",
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "browserify": "^13.1.0",
     "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "jquery": "^3.1.1",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-router": "^2.8.1",
-    "reactify": "^1.1.1",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.16.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
     "vinyl-source-stream": "^1.1.0"
   }
 }
