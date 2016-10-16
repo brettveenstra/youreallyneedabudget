@@ -101,6 +101,10 @@ _ReSharper*/
 # JustCode is a .NET coding add-in
 .JustCode
 
+# Intellisense
+typings/
+jsconfig.json
+
 # TeamCity is a build add-in
 _TeamCity*
 

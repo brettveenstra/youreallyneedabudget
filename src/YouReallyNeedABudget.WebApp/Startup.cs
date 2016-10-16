@@ -27,6 +27,7 @@ namespace YouReallyNeedABudget.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddCors();
             services.AddMvc();
             services.AddDbContext<BudgetContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddAutoMapper();
@@ -38,6 +39,8 @@ namespace YouReallyNeedABudget.WebApi
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseCors(builder =>
+             builder.WithOrigins("http://localhost:5000"));
             app.UseMvc();
         }
     }

@@ -37,4 +37,4 @@ gulp.task('watch', function() {
    gulp.watch(config.paths.jsx, ['js']); 
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['html', 'js', 'watch']);

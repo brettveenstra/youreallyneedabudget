@@ -2,7 +2,7 @@
 
 var React = require('react');
 
-var Home = React.createClass({
+var Header = React.createClass({
     render: function() {
         return (
             <div>
@@ -13,4 +13,4 @@ var Home = React.createClass({
     }
 });
 
-module.exports = Home;
+module.exports = Header;

@@ -9,6 +9,7 @@
   "author": "Joe Petrakovich",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.15.1",
     "gulp": "^3.9.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
@@ -18,6 +19,7 @@
     "babelify": "^7.3.0",
     "browserify": "^13.1.0",
     "gulp-livereload": "^3.8.1",
+    "retyped-axios-tsd-ambient": "^0.8.1-0",
     "vinyl-source-stream": "^1.1.0"
   }
 }

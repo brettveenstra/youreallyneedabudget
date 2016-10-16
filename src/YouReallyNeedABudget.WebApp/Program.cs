@@ -17,6 +17,7 @@ namespace YouReallyNeedABudget.WebApi
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls("http://localhost:5051")
                 .Build();
 
             host.Run();
