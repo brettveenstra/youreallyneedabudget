@@ -8,7 +8,7 @@ var axios = require('axios');
 
 var renderApp = function (accounts) {
     ReactDOM.render(
-        <div>
+        <div className="container">
             <Header />
             <Log accounts={accounts} />
         </div>,

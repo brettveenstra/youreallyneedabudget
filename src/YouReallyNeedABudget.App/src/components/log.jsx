@@ -2,7 +2,7 @@
 
 var React = require('react');
 var AccountList = require('./account/accountList.jsx');
-var TransactionTable = require('./account/transactionTable.jsx')
+var TransactionTable = require('./account/transactionTable.jsx');
 
 var Log = React.createClass({
     getInitialState: function() {
@@ -17,9 +17,11 @@ var Log = React.createClass({
 
     render: function() {
         return (
-            <div>
-                <AccountList accounts={this.props.accounts} onItemSelected={this.handleAccountListItemSelected} />
-                <TransactionTable account={this.state.selectedAccount} />
+            <div className="row">
+                <div className="row">
+                    <AccountList accounts={this.props.accounts} onItemSelected={this.handleAccountListItemSelected} />
+                    <TransactionTable account={this.state.selectedAccount} />
+                </div>
             </div>
         );
     }
