@@ -40,7 +40,12 @@ namespace YouReallyNeedABudget.WebApi
             loggerFactory.AddDebug();
 
             app.UseCors(builder =>
-             builder.WithOrigins("http://localhost:5000"));
+             builder
+             .WithOrigins("http://localhost:5000")
+             .AllowAnyMethod()
+             .AllowAnyHeader()
+             );
+
             app.UseMvc();
         }
     }

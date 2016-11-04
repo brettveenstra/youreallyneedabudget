@@ -1,23 +1,17 @@
-"use strict";
+import React from 'react';
 
-var React = require('react');
+export default class AccountListItem extends React.Component {
 
-var AccountListItem = React.createClass({
-
-    onItemSelected: function(){
-        this.props.onItemSelected(this.props.account);
-    },
-
-    render: function() {
-        return (
-            <li>
-                <a href='#' onClick={this.onItemSelected}>
-                {this.props.account.name} {this.props.account.type}
-                </a>
-            </li>
-        );
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
     }
-});
 
-module.exports = AccountListItem;
+    handleClick() {
+        this.props.onSelected(this.props.account.id);
+    }
 
+    render() {
+        return <li><a href="#" onClick={this.handleClick}>{this.props.account.name}</a></li>;
+    }
+}

@@ -1,17 +1,10 @@
-"use strict";
+import React from 'react';
 
-var React = require('react');
+class Header extends React.Component {
 
-var Header = React.createClass({
-    render: function() {
-        return (
-            <div className="page-header">
-                <h1>YouReallyNeedABudget &nbsp;
-                <small>A simple budgeting tool built with ASP.NET Core and React.</small>
-                </h1>
-            </div>
-        );
+    render() {
+        return <div className="page-header"><h1>YouReallyNeedABudget</h1></div>;
     }
-});
+}
 
-module.exports = Header;
+export default Header;

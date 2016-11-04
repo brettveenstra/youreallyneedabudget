@@ -1,4 +1,8 @@
 {
   "name": "youreallyneedabudget",
-  "dependencies": {}
+  "dependencies": {},
+  "globalDependencies": {
+    "axios": "registry:dt/axios#0.9.1+20161016142654",
+    "react": "registry:dt/react#0.14.0+20161008064207"
+  }
 }

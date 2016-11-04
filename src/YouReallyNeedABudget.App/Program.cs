@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 
-namespace YouReallyNeedABudget.App
+namespace YouReallyNeedABudget.App2
 {
     public class Program
     {

@@ -1,20 +1,9 @@
-"use strict";
+import React from 'react';
+import AccountListItem from './AccountListItem.jsx';
 
-var React = require('react');
-var AccountListItem = require('./accountListItem.jsx');
+export default class AccountList extends React.Component {
 
-var AccountList = React.createClass({
-
-    handleItemSelected: function (account) {
-        this.props.onItemSelected(account);
-    },
-
-    render: function () {
-
-        var createAccountListItem = function (account) {
-            return <AccountListItem account={account} key={account.id} onItemSelected={this.handleItemSelected} />;
-        }
-
+    render() {
         return (
             <div className="col-sm-3">
                 <div className="panel panel-info">
@@ -22,14 +11,10 @@ var AccountList = React.createClass({
                         <h3 className="panel-title">Accounts</h3>
                     </div>
                     <div className="panel-body">
-                        <ul className="nav nav-pills nav-stacked">
-                            {this.props.accounts.map(createAccountListItem, this)}
-                        </ul>
+                        <ul className="nav nav-pills nav-stacked">{this.props.accounts.map((account) => <AccountListItem account={account} onSelected={this.props.onItemSelected} key={account.name} />)}</ul>
                     </div>
                 </div>
             </div>
         );
     }
-});
-
-module.exports = AccountList;
+}

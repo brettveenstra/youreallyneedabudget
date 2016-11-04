@@ -33,7 +33,7 @@ gulp.task('css', function () {
 
 gulp.task('js', function () {
     browserify(config.paths.mainJS)
-    .transform("babelify", {presets: ["react"]})
+    .transform("babelify", {presets: ["react", "es2015"]})
     .bundle()
     .on('error', console.error.bind(console))
     .pipe(source('bundle.js'))

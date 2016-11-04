@@ -1,20 +1,18 @@
-"use strict";
+import React from 'react';
+import TransactionTableRow from './TransactionTableRow.jsx';
 
-var React = require('react');
-var TransactionRow = require('./transactionRow.jsx');
-var AddTransactionRowForm = require('./addTransactionRowForm.jsx');
+export default class TransactionTable extends React.Component {
 
-var TransactionTable = React.createClass({
-    render: function () {
-
-        var createTransactionRow = function (tx) {
-            return <TransactionRow transaction={tx} key={tx.id} />;
+    createTableRows(account) {
+        if (account) {
+            return account.transactions.map((tx) => <TransactionTableRow transaction={tx} key={tx.id} onDeleteClicked={this.props.onDeleteTransactionClicked} />);
         }
+    }
 
+    render() {
         return (
             <div className="col-sm-9">
                 <div className="panel panel-primary">
-
                     <div className="panel-heading">
                         <h3 className="panel-title">Transactions</h3>
                     </div>
@@ -30,15 +28,12 @@ var TransactionTable = React.createClass({
                                 </tr>
                             </thead>
                             <tbody>
-                                {this.props.account.transactions.map(createTransactionRow)}
+                                {this.createTableRows(this.props.account)}
                             </tbody>
                         </table>
-                         <AddTransactionRowForm account={this.props.account} />
                     </div>
                 </div>
             </div>
         );
     }
-});
-
-module.exports = TransactionTable;
+}
