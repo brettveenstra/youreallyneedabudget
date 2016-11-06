@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using YouReallyNeedABudget.DataAccess;
 using YouReallyNeedABudget.Models;
 using AutoMapper;
@@ -10,12 +9,12 @@ namespace YouReallyNeedABudget.WebApi.Controllers
     public class TransactionsController : Controller
     {
 
-        private readonly BudgetContext _dbContext;
+        private readonly ITransactionRepository _transactionRepo;
         private readonly IMapper _mapper;
 
-        public TransactionsController(BudgetContext dbContext, IMapper mapper)
+        public TransactionsController(ITransactionRepository repo, IMapper mapper)
         {
-            _dbContext = dbContext;
+            _transactionRepo = repo;
             _mapper = mapper;
         }
 
@@ -24,8 +23,7 @@ namespace YouReallyNeedABudget.WebApi.Controllers
         {
             var newTransaction = _mapper.Map<Transaction>(transactionDTO);
 
-            _dbContext.Transactions.Add(newTransaction);
-            _dbContext.SaveChanges();
+            _transactionRepo.Add(newTransaction);
 
             return Created(string.Format("/api/transaction/{0}", newTransaction.ID), _mapper.Map<DTO.Transaction>(newTransaction));
         }
@@ -33,8 +31,7 @@ namespace YouReallyNeedABudget.WebApi.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            _dbContext.Transactions.Remove(_dbContext.Transactions.Where(tx => tx.ID == id).SingleOrDefault());
-            _dbContext.SaveChanges();
+            _transactionRepo.Remove(id);
 
             return NoContent();
         }
