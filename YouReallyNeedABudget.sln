@@ -14,7 +14,7 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "YouReallyNeedABudget.Models
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "YouReallyNeedABudget.DataAccess", "src\YouReallyNeedABudget.DataAccess\YouReallyNeedABudget.DataAccess.xproj", "{DC2BBB59-FD7C-46CE-AC10-D8CE14DD60CA}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "YouReallyNeedABudget.WebApi", "src\YouReallyNeedABudget.WebApp\YouReallyNeedABudget.WebApi.xproj", "{F17DE361-9E55-49E1-AA0A-FCAD8C96358C}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "YouReallyNeedABudget.WebApi", "src\YouReallyNeedABudget.WebApi\YouReallyNeedABudget.WebApi.xproj", "{F17DE361-9E55-49E1-AA0A-FCAD8C96358C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
