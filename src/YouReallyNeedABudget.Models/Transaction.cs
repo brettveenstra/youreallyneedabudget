@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace YouReallyNeedABudget.Models
 {
@@ -6,7 +7,8 @@ namespace YouReallyNeedABudget.Models
     {
         public int ID { get; set; }
         public int AccountId { get; set; }
-        public int? PayeeId { get; set; }
+        [ForeignKey("Payee")]
+        public string PayeeName { get; set; }
         public DateTime Date { get; set; }
         public string Memo { get; set; }
         public decimal Amount { get; set; }
