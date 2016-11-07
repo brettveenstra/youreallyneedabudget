@@ -14,6 +14,14 @@ namespace YouReallyNeedABudget.DataAccess
 
         public void Add(Transaction transaction)
         {
+            if (string.IsNullOrEmpty(transaction.PayeeName) == false)
+            {
+                if (_dbContext.Payees.SingleOrDefault(p => p.Name == transaction.PayeeName) == null)
+                {
+                    _dbContext.Payees.Add(new Payee { Name = transaction.PayeeName });
+                }
+            }
+
             _dbContext.Transactions.Add(transaction);
             _dbContext.SaveChanges();
         }

@@ -8,7 +8,7 @@ namespace YouReallyNeedABudget.WebApi.DTO
         public int ID;
         public int AccountId;
         public DateTime Date;
-        public int? PayeeId;
+        public string PayeeName;
         public string Memo;
         public decimal Amount;
         public bool Cleared;
