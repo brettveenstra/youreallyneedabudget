@@ -26,13 +26,11 @@ namespace YouReallyNeedABudget.DataAccess.Migrations
                 name: "Payee",
                 columns: table => new
                 {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Payee", x => x.ID);
+                    table.PrimaryKey("PK_Payee", x => x.Name);
                 });
 
             migrationBuilder.CreateTable(
@@ -67,7 +65,7 @@ namespace YouReallyNeedABudget.DataAccess.Migrations
                     Cleared = table.Column<bool>(nullable: false),
                     Date = table.Column<DateTime>(nullable: false),
                     Memo = table.Column<string>(nullable: true),
-                    PayeeId = table.Column<int>(nullable: true)
+                    PayeeName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -79,10 +77,10 @@ namespace YouReallyNeedABudget.DataAccess.Migrations
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Transaction_Payee_PayeeId",
-                        column: x => x.PayeeId,
+                        name: "FK_Transaction_Payee_PayeeName",
+                        column: x => x.PayeeName,
                         principalTable: "Payee",
-                        principalColumn: "ID",
+                        principalColumn: "Name",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -97,9 +95,9 @@ namespace YouReallyNeedABudget.DataAccess.Migrations
                 column: "AccountId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Transaction_PayeeId",
+                name: "IX_Transaction_PayeeName",
                 table: "Transaction",
-                column: "PayeeId");
+                column: "PayeeName");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -7,14 +7,14 @@ var concat = require('gulp-concat');
 
 var config = {
     paths: {
-        html: './src/*.html',
-        js: './src/**/*.js',
-        jsx: './src/**/*.jsx',
+        html: './client/src/*.html',
+        js: './client/src/**/*.js',
+        jsx: './client/src/**/*.jsx',
         css: [
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
         ],
-        mainJS: './src/main.jsx',
+        mainJS: './client/src/main.jsx',
         wwwroot: './wwwroot'
     }
 }

@@ -8,8 +8,8 @@ using YouReallyNeedABudget.DataAccess;
 namespace YouReallyNeedABudget.DataAccess.Migrations
 {
     [DbContext(typeof(BudgetContext))]
-    [Migration("20161107001137_payee-primary-key-change")]
-    partial class payeeprimarykeychange
+    [Migration("20161114022722_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
