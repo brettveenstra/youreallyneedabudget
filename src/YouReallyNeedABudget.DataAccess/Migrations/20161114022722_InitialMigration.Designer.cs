@@ -8,7 +8,7 @@ using YouReallyNeedABudget.DataAccess;
 namespace YouReallyNeedABudget.DataAccess.Migrations
 {
     [DbContext(typeof(BudgetContext))]
-    [Migration("20160929022729_InitialMigration")]
+    [Migration("20161114022722_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,12 +49,9 @@ namespace YouReallyNeedABudget.DataAccess.Migrations
 
             modelBuilder.Entity("YouReallyNeedABudget.Models.Payee", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
                     b.Property<string>("Name");
 
-                    b.HasKey("ID");
+                    b.HasKey("Name");
 
                     b.ToTable("Payee");
                 });
@@ -74,13 +71,13 @@ namespace YouReallyNeedABudget.DataAccess.Migrations
 
                     b.Property<string>("Memo");
 
-                    b.Property<int?>("PayeeId");
+                    b.Property<string>("PayeeName");
 
                     b.HasKey("ID");
 
                     b.HasIndex("AccountId");
 
-                    b.HasIndex("PayeeId");
+                    b.HasIndex("PayeeName");
 
                     b.ToTable("Transaction");
                 });
@@ -102,7 +99,7 @@ namespace YouReallyNeedABudget.DataAccess.Migrations
 
                     b.HasOne("YouReallyNeedABudget.Models.Payee", "Payee")
                         .WithMany()
-                        .HasForeignKey("PayeeId");
+                        .HasForeignKey("PayeeName");
                 });
         }
     }

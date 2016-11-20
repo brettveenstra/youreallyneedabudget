@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace YouReallyNeedABudget.Models
 {
     public class Payee
     {
-        public int ID { get; set; }
+        [Key]
         public string Name { get; set; }
     }
 }
